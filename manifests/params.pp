@@ -17,6 +17,7 @@ class puppet::params {
   $puppetdb_port = 8081
   $puppetdb_server = undef
   $puppetdb_version = 'latest'
+  $lastrunfile = "${::statedir}/last_run_summary.yaml"
   $manage_puppetdb = true
   $runinterval = '30m'
   $server_ca_enabled = true

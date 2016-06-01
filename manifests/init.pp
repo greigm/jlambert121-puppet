@@ -19,6 +19,7 @@ class puppet (
   Integer                                      $puppetdb_port         = $::puppet::params::puppetdb_port,
   Optional[String]                             $puppetdb_server       = $::puppet::params::puppetdb_server,
   String                                       $puppetdb_version      = $::puppet::params::puppetdb_version,
+  String                                       $lastrunfile           = $::puppet::params::lastrunfile,
   Boolean                                      $manage_puppetdb       = $::puppet::params::manage_puppetdb,
   String                                       $runinterval           = $::puppet::params::runinterval,
   Boolean                                      $server_ca_enabled     = $::puppet::params::server_ca_enabled,

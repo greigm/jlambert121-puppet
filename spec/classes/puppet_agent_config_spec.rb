@@ -21,6 +21,11 @@ describe 'puppet::agent::config', :type => :class do
     it { should contain_concat__fragment('puppet_agent').with(:content => /runinterval\s+=\s+60m/) }
   end
 
+  describe 'set lastrunfile' do
+    let(:pre_condition) { 'class{"::puppet": lastrunfile => "/tmp/last_run_summary.yaml"}' }
+    it { should contain_concat__fragment('puppet_agent').with(:content => /lastrunfile\s+=\s+\/tmp\/last_run_summary.yaml/) }
+  end
+
   describe 'set puppetmaster' do
     let(:pre_condition) { 'class{"::puppet": puppetmaster => "master.example.com"}'}
     it { should contain_concat__fragment('puppet_agent').with(:content => /server\s+=\s+master.example.com/) }
