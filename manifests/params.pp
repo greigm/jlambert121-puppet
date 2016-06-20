@@ -21,6 +21,7 @@ class puppet::params {
   $manage_puppetdb = true
   $runinterval = '30m'
   $server_ca_enabled = true
+  $server_autosign = undef
   $server_certname = undef
   $server_java_opts = '-Xms2g -Xmx2g'
   $server_log_dir = '/var/log/puppetlabs/puppetserver'

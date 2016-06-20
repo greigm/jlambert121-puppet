@@ -8,6 +8,9 @@
   always_cache_features = true
   ca = <%= @ca_enabled %>
 
+<% if @autosign && @autosign.length > 0 -%>
+  autosign = <%= @autosign %>
+<% end -%>
 <% if @reports && @reports.length > 0 -%>
   reports = <%= @reports.join(', ') %>
 <% end -%>

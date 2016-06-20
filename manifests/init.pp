@@ -23,6 +23,7 @@ class puppet (
   Boolean                                      $manage_puppetdb       = $::puppet::params::manage_puppetdb,
   String                                       $runinterval           = $::puppet::params::runinterval,
   Boolean                                      $server_ca_enabled     = $::puppet::params::server_ca_enabled,
+  Optional[String]                             $server_autosign       = $::puppet::params::server_autosign,
   Optional[String]                             $server_certname       = $::puppet::params::server_certname,
   String                                       $server_java_opts      = $::puppet::params::server_java_opts,
   String                                       $server_log_dir        = $::puppet::params::server_log_dir,
