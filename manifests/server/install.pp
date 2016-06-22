@@ -39,7 +39,7 @@ class puppet::server::install (
     group  => $::settings::group,
   }
 
-  file { '/opt/puppetlabs/cache/r10k':
+  file { '/opt/puppetlabs/puppet/cache/r10k':
     ensure => directory,
     owner  => $::settings::user,
     group  => $::settings::group,
