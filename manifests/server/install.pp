@@ -31,17 +31,19 @@ class puppet::server::install (
     }
   }
 
-  # Set up environments
-  file { '/etc/puppetlabs/code/environments':
-    ensure => 'directory',
-    mode   => '0755',
-    owner  => $::settings::user,
-    group  => $::settings::group,
-  }
+  if $server {
+    # Set up environments
+    file { '/etc/puppetlabs/code/environments':
+      ensure => 'directory',
+      mode   => '0755',
+      owner  => $::settings::user,
+      group  => $::settings::group,
+    }
 
-  file { '/opt/puppetlabs/puppet/cache/r10k':
-    ensure => directory,
-    owner  => $::settings::user,
-    group  => $::settings::group,
+    file { '/opt/puppetlabs/puppet/cache/r10k':
+      ensure => directory,
+      owner  => $::settings::user,
+      group  => $::settings::group,
+    }
   }
 }
