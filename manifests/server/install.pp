@@ -35,6 +35,13 @@ class puppet::server::install (
   file { '/etc/puppetlabs/code/environments':
     ensure => 'directory',
     mode   => '0755',
+    owner  => $::settings::user,
+    group  => $::settings::group,
   }
 
+  file { '/opt/puppetlabs/cache/r10k':
+    ensure => directory,
+    owner  => $::settings::user,
+    group  => $::settings::group,
+  }
 }
