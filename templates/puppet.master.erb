@@ -5,7 +5,7 @@
   pidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid
   codedir = /etc/puppetlabs/code
 
-  always_cache_features = true
+  always_retry_plugins = true
   ca = <%= @ca_enabled %>
 
 <% if @autosign && @autosign.length > 0 -%>
